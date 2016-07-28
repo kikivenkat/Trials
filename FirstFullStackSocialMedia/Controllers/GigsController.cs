@@ -16,6 +16,8 @@ namespace FirstFullStackSocialMedia.Controllers
         }
 
         [Authorize]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create()
         {
             var viewModel = new GigFormViewModel()
@@ -27,6 +29,7 @@ namespace FirstFullStackSocialMedia.Controllers
 
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
